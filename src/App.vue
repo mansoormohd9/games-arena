@@ -16,7 +16,7 @@ import HelloWorld from './components/HelloWorld.vue';
 })
 export default class App extends Vue {
   created() {
-    
+    this.$store.dispatch("initialize");
   }
 }
 </script>

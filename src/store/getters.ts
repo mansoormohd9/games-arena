@@ -1,6 +1,6 @@
 import {GetterTree} from 'vuex';
 import {AppState, GameInfo} from '../types/types';
-import {sortBy} from 'lodash-es';
+import { sortBy } from "lodash-es";
 
 const getters: GetterTree<AppState, AppState> = {
   getGames(state: AppState): Array<GameInfo> {
@@ -12,7 +12,7 @@ const getters: GetterTree<AppState, AppState> = {
 
     //filter for sort
     if(state.filters.sortBy) {
-      filteredGames = _sortBy(filteredGames, state.filters.sortBy);
+      filteredGames = sortBy(filteredGames, state.filters.sortBy);
       if(!state.filters.sortOrderAsc) {
         filteredGames = filteredGames.reverse();
       }
