@@ -2,9 +2,9 @@
   <section class="section">
     <b-field grouped>
       <b-field>
-        <b-input placeholder="Search by name..." type="search" icon="magnify"></b-input>
+        <b-input placeholder="Search by name..." v-model="searchText" type="search" icon="magnify"></b-input>
         <p class="control">
-          <button class="button is-primary">Search</button>
+          <button class="button is-primary" v-on:click="updateSearch">Search</button>
         </p>
       </b-field>
       <b-field>
@@ -34,6 +34,7 @@ import { GameInfo } from '../types/types';
 export default class Toolbar extends Vue {
   platformTypeFilter = "All";
   platformTypes: Array<any> = [];
+  searchText = "";
 
   created() {
     this.platformTypes = [...new Set(map(this.$store.state.games.map((x: GameInfo) => x.platform)))];
@@ -51,6 +52,10 @@ export default class Toolbar extends Vue {
   @Watch('platformTypeFilter') 
   updateTypeFilter() {
     this.$store.commit("updatePlatformFilter", this.platformTypeFilter)
+  }
+
+  updateSearch() {
+    this.$store.commit("updateSearch", this.searchText)
   }
 }
 </script>

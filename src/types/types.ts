@@ -12,6 +12,7 @@ export interface AppState {
 }
 
 export interface AppFilters {
+  searchText: string;
   platformType: string;
   sortBy: string;
   sortOrderAsc: boolean;

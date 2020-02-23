@@ -1,5 +1,5 @@
 import {GetterTree} from 'vuex';
-import {AppState, GameInfo, AppFilters} from '../types/types';
+import {AppState, GameInfo } from '../types/types';
 import { sortBy } from "lodash-es";
 
 const getters: GetterTree<AppState, AppState> = {
@@ -17,6 +17,12 @@ const getters: GetterTree<AppState, AppState> = {
         filteredGames = filteredGames.reverse();
       }
     }
+
+    //search text
+    if(state.filters.searchText) {
+      filteredGames = filteredGames.filter(x => x.title.toLowerCase().indexOf(state.filters.searchText.toLowerCase()) != -1);
+    }
+
     return filteredGames;
   },
   sortType(state: AppState) {

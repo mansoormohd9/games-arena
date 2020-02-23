@@ -12,6 +12,9 @@ const mutations: MutationTree<AppState> = {
   },
   updatePlatformFilter(state: AppState, filter: string) {
     state.filters.platformType = filter;
+  },
+  updateSearch(state: AppState, searchText: string) {
+    state.filters.searchText = searchText;
   }
 };
 
