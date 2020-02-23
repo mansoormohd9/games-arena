@@ -3,10 +3,10 @@ import {AppState, GameInfo} from '../types/types';
 import { sortBy } from "lodash-es";
 
 const getters: GetterTree<AppState, AppState> = {
-  getGames(state: AppState): Array<GameInfo> {
+  filteredGames(state: AppState): Array<GameInfo> {
     let filteredGames = state.games;
     //filter for platform type
-    if(state.filters.platformType) {
+    if(state.filters.platformType != "All") {
       filteredGames = filteredGames.filter(game => game.platform.toLowerCase() === state.filters.platformType.toLowerCase());
     }
 
