@@ -7,8 +7,10 @@
         </div>
       </div>
     </nav>
-    <Toolbar></Toolbar>
-    <GamesContainer></GamesContainer>
+    <div class="container">
+      <Toolbar></Toolbar>
+      <GamesContainer></GamesContainer>
+    </div>
     <!-- <img alt="Vue logo" src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/> -->
   </div>

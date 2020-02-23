@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section class="section">
     <b-field>
       <b-input placeholder="Search..." type="search" icon="magnify"></b-input>
       <p class="control">

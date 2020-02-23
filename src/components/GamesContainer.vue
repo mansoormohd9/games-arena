@@ -3,6 +3,8 @@
   <section class="section">
     <div class="container">
       <GameInfoCard v-for="(game, index) in paginatedItems" :key="index" :game="game"></GameInfoCard>
+    </div>
+    <div class="paginationSection">
       <b-pagination
         :total="totalPages"
         :current.sync="currentPage"
@@ -63,7 +65,7 @@ export default class GamesContainer extends Vue {
   }
 
   get paginatedItems() {
-    const nextElem = this.currentPage * this.paginationModel.perPage - 1;
+    const nextElem = (this.currentPage - 1) * this.paginationModel.perPage;
     return slice(
       this.filteredGames,
       nextElem,
@@ -72,3 +74,10 @@ export default class GamesContainer extends Vue {
   }
 }
 </script>
+
+<style scoped>
+.paginationSection {
+  width: 80%;
+  margin: 0 auto;
+}
+</style>
