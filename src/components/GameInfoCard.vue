@@ -47,6 +47,7 @@ export default class GameInfoCard extends Vue {
   float: left;
 }
 .card-content.game-content {
+  width: 400px;
   height: 100px;
 }
 </style>

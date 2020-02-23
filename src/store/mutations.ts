@@ -6,6 +6,12 @@ import {
 const mutations: MutationTree<AppState> = {
   setGames(state: AppState, games: Array<GameInfo>) {
     state.games = games;
+  },
+  updateSortType(state: AppState) {
+    state.filters.sortOrderAsc = !state.filters.sortOrderAsc;
+  },
+  updatePlatformFilter(state: AppState, filter: string) {
+    state.filters.platformType = filter;
   }
 };
 
