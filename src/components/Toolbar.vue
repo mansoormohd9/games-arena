@@ -77,7 +77,7 @@ export default class Toolbar extends Vue {
 .columns.toolbar-div {
   width: 90%;
 }
-.columns.toolbar-div .label {
+/deep/ .columns.toolbar-div label {
   width: 140px;
 }
 </style>
