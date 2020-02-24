@@ -1,6 +1,6 @@
 <template>
 <body>
-  <section class="section">
+  <section class="section games-container">
     <div class="container">
       <GameInfoCard v-for="(game, index) in paginatedItems" :key="index" :game="game"></GameInfoCard>
     </div>
@@ -79,5 +79,9 @@ export default class GamesContainer extends Vue {
 .paginationSection {
   width: 80%;
   margin: 0 auto;
+}
+.section.games-container {
+  display: grid;
+  padding-bottom: 20px;
 }
 </style>

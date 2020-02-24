@@ -20,7 +20,7 @@ const getters: GetterTree<AppState, AppState> = {
 
     //search text
     if(state.filters.searchText) {
-      filteredGames = filteredGames.filter(x => x.title.toLowerCase().indexOf(state.filters.searchText.toLowerCase()) != -1);
+      filteredGames = filteredGames.filter(x => x.title.toLowerCase().indexOf(state.filters.searchText.toLowerCase().trim()) != -1);
     }
 
     return filteredGames;

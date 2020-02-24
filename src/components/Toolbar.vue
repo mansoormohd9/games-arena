@@ -1,27 +1,40 @@
 <template>
   <section class="section">
     <b-field grouped>
-      <b-field>
-        <b-input placeholder="Search by name..." v-model="searchText" type="search" icon="magnify"></b-input>
-        <p class="control">
-          <button class="button is-primary" v-on:click="updateSearch">Search</button>
-        </p>
-      </b-field>
-      <b-field>
-        <b-select v-model="platformTypeFilter">
-          <option v-for="(platformType, index) in platformTypes" :key="index" v-on:input="updateTypeFilter">{{platformType}}</option>
-        </b-select>
-      </b-field>
-      <b-field>
-        <b-button type="is-primary" v-on:click="updateSortType">
-          <b-icon
-                :icon="sortType ? 'mdi mdi-arrow-up-bold' : 'mdi mdi-arrow-down-bold'"
-                size="is-small">
-            </b-icon>
-        </b-button>
-      </b-field>
+      <div class="columns toolbar-div">
+        <div class="column is-half">
+          <b-field>
+            <b-input placeholder="Search by name..." v-model="searchText" type="search" icon="magnify"></b-input>
+            <p class="control">
+              <button class="button is-primary" v-on:click="updateSearch">Search</button>
+            </p>
+          </b-field>
+        </div>
+
+        <div class="column is-two-fifths">
+          <b-field>
+            <b-field horizontal label="Platform Type">
+                <b-select v-model="platformTypeFilter">
+                  <option v-for="(platformType, index) in platformTypes" :key="index" v-on:input="updateTypeFilter">{{platformType}}</option>
+                </b-select>
+            </b-field>
+          </b-field>
+        </div>
+
+        <div class="column">
+          <b-field>
+            <b-field horizontal label="Sort By Score">
+                <b-button type="is-primary" v-on:click="updateSortType">
+                  <b-icon
+                        :icon="sortType ? 'mdi mdi-arrow-up-bold' : 'mdi mdi-arrow-down-bold'"
+                        size="is-small">
+                    </b-icon>
+                </b-button>
+            </b-field>
+          </b-field>
+        </div>
+      </div>
     </b-field>
-    
   </section>
 </template>
 
@@ -59,3 +72,12 @@ export default class Toolbar extends Vue {
   }
 }
 </script>
+
+<style scoped>
+.columns.toolbar-div {
+  width: 90%;
+}
+.columns.toolbar-div .label {
+  width: 140px;
+}
+</style>

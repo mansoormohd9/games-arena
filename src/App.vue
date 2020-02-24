@@ -11,20 +11,16 @@
       <Toolbar></Toolbar>
       <GamesContainer></GamesContainer>
     </div>
-    <!-- <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/> -->
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator';
-import HelloWorld from './components/HelloWorld.vue';
 import Toolbar from "./components/Toolbar.vue";
 import GamesContainer from "./components/GamesContainer.vue";
 
 @Component({
   components: {
-    HelloWorld,
     GamesContainer,
     Toolbar
   },
@@ -47,6 +43,6 @@ export default class App extends Vue {
 }
 .navbar-item img {
   width: 400px;
-  max-height: 125px !important;
+  max-height: 150px !important;
 }
 </style>

@@ -46,6 +46,11 @@ export default class GameInfoCard extends Vue {
   height: 200px;
   float: left;
 }
+@media screen and (max-width: 600px){
+  .card.game-info {
+    width: 90%;
+  }
+}
 .card-content.game-content {
   width: 400px;
   height: 100px;
